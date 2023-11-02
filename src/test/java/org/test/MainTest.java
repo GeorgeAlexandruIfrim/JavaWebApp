@@ -1,16 +1,20 @@
 package org.test;
-import org.example.Animal;
+import org.example.Main;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class MainTest {
-
     @Test
-    public void test(){
+    public void testMessageWhenMorning(){
+        String msg = Main.helloWorld(true);
 
-        Animal girafe = new Animal("Giraffe");
+        assertEquals(msg, "Good Morning");
+    }
+    @Test
+    public void testMessageWhenNotMorning(){
+        String msg = Main.helloWorld(false);
 
-        assertEquals(girafe, new Animal("Giraffe"));
+        assertEquals(msg, "Not Morning");
     }
 }
